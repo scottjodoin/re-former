@@ -1,0 +1,22 @@
+<%= form_with model: @user, local: true do %>
+  <ul>
+  <% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= label_tag(:username, "Name:") %>
+    <%= text_field(:user, :username) %>
+  </p>
+  <p>
+    <%= label_tag(:email, "Email:") %>
+    <%= email_field(:user, :email) %>
+  </p>
+  <p>
+    <%= label_tag(:password, "Password:") %>
+    <%= password_field(:user, :password) %>
+  </p>
+  <p>
+    <%= submit_tag("Submit") %>
+  </p>
+<% end %>
